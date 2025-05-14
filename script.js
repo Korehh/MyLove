@@ -31,6 +31,17 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   
     cake.addEventListener("click", function (event) {
+        // Attempt to unlock audio on first user click
+        if (audio.paused) {
+            audio.play().then(() => {
+            audio.pause();
+            audio.currentTime = 0;
+            console.log("Audio unlocked");
+            }).catch(err => {
+            console.log("Audio unlock failed:", err);
+            });
+        }
+  
       const rect = cake.getBoundingClientRect();
       const left = event.clientX - rect.left;
       const top = event.clientY - rect.top;
