@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let audioContext;
     let analyser;
     let microphone;
-    let audio = new Audio('hbd_hbd.mp3');
+    let audio = new Audio('fools.mp3');
   
   
     function updateCandleCount() {
@@ -63,33 +63,39 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   
     function blowOutCandles() {
-      let blownOut = 0;
-  
-      // Only check for blowing if there are candles and at least one is not blown out
-      if (candles.length > 0 && candles.some((candle) => !candle.classList.contains("out"))) {
-        if (isBlowing()) {
-          candles.forEach((candle) => {
-            if (!candle.classList.contains("out") && Math.random() > 0.5) {
-              candle.classList.add("out");
-              blownOut++;
-            }
-          });
-        }
-  
-        if (blownOut > 0) {
-          updateCandleCount();
-        }
-  
-        // If all candles are blown out, trigger confetti after a small delay
-        if (candles.every((candle) => candle.classList.contains("out"))) {
-          setTimeout(function() {
-            triggerConfetti();
-            endlessConfetti(); // Start the endless confetti
-          }, 200);
-          audio.play();
+        let blownOut = 0;
+      
+        // Only check for blowing if there are candles and at least one is not blown out
+        if (candles.length > 0 && candles.some((candle) => !candle.classList.contains("out"))) {
+          if (isBlowing()) {
+            candles.forEach((candle) => {
+              if (!candle.classList.contains("out") && Math.random() > 0.5) {
+                candle.classList.add("out");
+                blownOut++;
+              }
+            });
+          }
+      
+          if (blownOut > 0) {
+            updateCandleCount();
+          }
+      
+          // If all candles are blown out, trigger confetti after a small delay
+          if (candles.every((candle) => candle.classList.contains("out"))) {
+            setTimeout(function() {
+              triggerConfetti();
+              endlessConfetti(); // Start the endless confetti
+
+          
+              // Redirect to the second page after 2 seconds
+              setTimeout(function() {
+                window.location.href = "happybirthdaylove.html"; // Replace with the actual URL of your second page
+              }, 5000);
+            }, 200);
+            
+          }
         }
       }
-    }
   
   
   
@@ -129,3 +135,5 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     }, 1000);
   }
+  
+  

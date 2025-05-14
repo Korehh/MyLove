@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>For Maricon 💝</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+
+</head>
+<body>
+  <!-- Audio element -->
+  <div class="spotify-player">
+    <button id="play-btn">
+      <img src="img/spotify (1).png" alt="Play" id="play-icon" />
+      <span>Play Music</span>
+    </button>
+  </div>
+      
+        <!-- Main Content -->
+        <section id="content">
+            <h1 class="greeting-title">🎉 Happy Birthday My Loveeee :></h1>
+        
+            <div class="gallery">
+              <h2>📸 us :></h2>
+              <div class="photos">
+                <img src="img/Picsart_25-02-10_11-07-13-623.jpg" alt="">
+                <img src="img/ChatGPT Image Apr 9, 2025, 02_35_22 PM.png" alt="">
+                <img src="img/Picsart_25-02-10_14-14-01-580.jpg" alt="">
+                <!-- Add more if needed -->
+              </div>
+            </div>
+      
+        <script>
+          // Wait for bouquet to show, then hide it and show main content
+          window.onload = () => {
+            setTimeout(() => {
+              document.getElementById("bouquet-popup").style.display = "none";
+              document.getElementById("content").classList.remove("hidden");
+            }, 3000); // 3 seconds
+          };
+        </script>
+      
+ 
+
+    <div class="letter">
+      <h2>💌 A Message From me/your love</h2>
+      <p>To my dearest Maricon,<br><br>
+        On this special day, I just want to remind you how incredibly loved you are. You bring light into my life in ways words could never fully capture. Your smile, your kindness, your laugh... they are my favorite parts of every day.<br><br>
+
+        Today is all about you. I hope it’s filled with the same warmth, joy, and love that you give so freely to everyone around you, especially me. Thank you for being my everything. I’m so grateful to be walking through life with you by my side.
+        
+        Here’s to more memories, more laughter, and a future that’s even brighter than today.<br><br>
+        Wala na ako masabi pa love, gusto ko nalang lagi sabihin na mahal na mahal kita. 💕 Kaya ko tiisin lahat hehe kase for now words lang mapanghahawakan natin, please stay with me love and wait for me too. I want a future with you, love. Just trust me on this. 💕<br>
+        Wag ka magsawa sa mga mga sinasabi ko love kung gaano kita ka mahal (⁄ ⁄>⁄ ▽ ⁄<⁄ ⁄) Paninindigan kita mwahhhhhh!<br><br>
+        I love you more than words can say. 💕<br><br>
+        Forever yours,<br>
+             Alprince</p>
+    </div>
+  </section>
+</body>
+</html>
+<script>
+  const playBtn = document.getElementById('play-btn');
+  const playIcon = document.getElementById('play-icon');
+  const audio = new Audio('fools.mp3');
+  let isPlaying = false;
+
+  playBtn.addEventListener('click', () => {
+    if (!isPlaying) {
+      audio.play();
+      isPlaying = true;
+      playIcon.src = 'img/video-pause-button.png'; // optional: switch to pause icon
+      playBtn.querySelector('span').textContent = 'Pause';
+    } else {
+      audio.pause();
+      isPlaying = false;
+      playIcon.src = 'img/spotify (1).png';
+      playBtn.querySelector('span').textContent = 'Play';
+    }
+  });
+</script>
+<script>
+  setInterval(() => {
+    const heart = document.createElement("div");
+    heart.className = "heart";
+    heart.style.left = `${Math.random() * 100}vw`;
+    heart.textContent = "💖";
+    document.body.appendChild(heart);
+    setTimeout(() => heart.remove(), 5000);
+  }, 400);
+</script>
+<!-- Trigger confetti when tapping the screen (once or multiple times): -->
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+<script>
+  document.body.addEventListener("click", () => {
+    confetti({
+      particleCount: 100,
+      spread: 70,
+      origin: { y: 0.6 }
+    });
+  });
+</script>
+
+<div id="typewriter"></div>
+
+<script>
+  const text = "Happy Birthday, my love. You mean the world to me... 💖";
+  let i = 0;
+  function type() {
+    if (i < text.length) {
+      document.getElementById("typewriter").innerHTML += text.charAt(i);
+      i++;
+      setTimeout(type, 50);
+    }
+  }
+  window.onload = type;
+</script>
+
+
+
+

@@ -1,6 +1,33 @@
 body {
     background-color: #ffe5ec;
+    font-family: 'Quicksand', sans-serif;
   }
+  h1, h2 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2.5rem;
+    color: #ff69b4;
+    
+  }
+  @keyframes floatHearts {
+    0% {
+      transform: translateY(0) scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-200px) scale(1.5);
+      opacity: 0;
+    }
+  }
+  
+  .heart {
+    position: fixed;
+    bottom: 0;
+    font-size: 24px;
+    animation: floatHearts 5s ease-in infinite;
+    color: #ff6b81;
+    z-index: 999;
+  }
+  
   
   .candle-count-display {
     text-align: center;
@@ -213,3 +240,126 @@ body {
       50% { opacity: 1; }
       100% { opacity: 0; }
   }
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: #fff0f5;
+    color: #333;
+    text-align: center;
+    overflow-x: hidden;
+  }
+  
+  .hidden {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 1s ease;
+  }
+  
+  #landing {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #birthday-message {
+    margin-top: 30px;
+    font-size: 1.8rem;
+    color: #e75480;
+  }
+  
+  .scroll-down {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    color: #888;
+  }
+  
+  #content {
+    padding: 40px 20px;
+    opacity: 1;
+  }
+  
+  .gallery img {
+    width: 100%;
+    max-width: 300px;
+    margin: 10px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  }
+  
+  .letter {
+    margin-top: 50px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+  }
+  
+  /* Float animation */
+  @keyframes float {
+    0% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-10px) rotate(2deg); }
+    100% { transform: translateY(0px) rotate(0deg); }
+  }
+  .floating-photos img,
+  .floating-videos video, .gallery img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    animation: floatPhotos 6s ease-in-out infinite;
+  }
+  .spotify-player {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+.photos img {
+  border-radius: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.photos img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+.letter {
+  background: white;
+  padding: 25px;
+  border-radius: 20px;
+  max-width: 700px;
+  margin: 20px auto;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+  border: 2px solid #ffc0cb;
+}
+
+
+#play-btn {
+  background-color: #1db954;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 50px;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+}
+
+#play-btn:hover {
+  background-color: #1ed760;
+}
+
+#play-icon {
+  width: 20px;
+  height: 20px;
+}
