@@ -16,7 +16,18 @@
     <div class="candle-count-display">
       HAPPY BIRTHDAY MARICON 🎂
     </div>
+    <div id="floating-photos">
+      <img src="img/photo2.jpg.JPG" class="floating-photo" />
+      <img src="img/photo3.jpg.jpg" class="floating-photo" />
+      <img src="img/photo4.jpg.JPG" class="floating-photo" />
+      <img src="img/photo5.jpg.jpg" class="floating-photo" />
+      <img src="img/photo6.jpg.jpg" class="floating-photo" />
+      <img src="img/IMG_1530.JPG" class="floating-photo" />
+      <img src="img/a.jpg" class="floating-photo" />
+    </div>
+    
     <div class="cake">
+      <div id="cake-message" class="speech-bubble">Tap me to add candles!</div>
       <div id="candleCount" style="display:none;"></div>
       <div class="plate"></div>
       <div class="layer layer-bottom"></div>
@@ -33,7 +44,22 @@
     </div>
     <script src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.3.2"></script>
-    <div><h4>Put some candles and blow it using your mic Love :></h4></div>
   </body>
- 
+      <script>
+        const photos = document.querySelectorAll('.floating-photo');
+        photos.forEach(photo => {
+          // Random start position (top and left)
+          photo.style.left = Math.random() * 80 + 10 + 'vw';
+          photo.style.top = Math.random() * 60 + 20 + 'vh';
+      
+          // Random animation delay
+          photo.style.animationDelay = (Math.random() * 10).toFixed(2) + 's';
+      
+          // Optional: random size
+          const size = Math.random() * 40 + 80; // 80–120px
+          photo.style.width = size + 'px';
+          photo.style.height = size + 'px';
+        });
+      </script>
+  
 </html>

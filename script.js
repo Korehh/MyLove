@@ -46,6 +46,8 @@ document.addEventListener("DOMContentLoaded", function () {
       const left = event.clientX - rect.left;
       const top = event.clientY - rect.top;
       addCandle(left, top);
+      // 💬 Update the speech bubble
+       onCakeTap();
     });
   
     function isBlowing() {
@@ -68,6 +70,7 @@ document.addEventListener("DOMContentLoaded", function () {
         // Only check for blowing if there are candles and at least one is not blown out
         if (candles.length > 0 && candles.some((candle) => !candle.classList.contains("out"))) {
           if (isBlowing()) {
+            cakeMessage.classList.add("hidden");
             candles.forEach((candle) => {
               if (!candle.classList.contains("out") && Math.random() > 0.5) {
                 candle.classList.add("out");
@@ -136,4 +139,10 @@ document.addEventListener("DOMContentLoaded", function () {
     }, 1000);
   }
   
-  
+  // Initial state
+const cakeMessage = document.getElementById("cake-message");
+
+// When user taps the cake
+function onCakeTap() {
+  cakeMessage.textContent = "Blow the candles, love!";
+}

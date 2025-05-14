@@ -363,3 +363,76 @@ body {
   width: 20px;
   height: 20px;
 }
+/* Put in your CSS file or <style> section: */
+.speech-bubble {
+  position: absolute;
+  top: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #fff0f5;
+  border-radius: 10px;
+  padding: 10px 15px;
+  font-size: 0.95rem;
+  color: #d6336c;
+  font-weight: bold;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  animation: floatText 1.5s ease-in-out infinite alternate;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  z-index: 10;
+}
+
+@keyframes floatText {
+  from { transform: translateX(-50%) translateY(0); }
+  to { transform: translateX(-50%) translateY(-5px); }
+}
+#cake-container {
+  position: relative;
+}
+#cake-message {
+  transition: opacity 0.5s ease;
+  opacity: 1;
+}
+#cake-message.hidden {
+  opacity: 0;
+}
+
+/* floating */
+#floating-photos {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.floating-photo {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  animation: floatPhoto 12s ease-in-out infinite;
+  opacity: 0;
+}
+
+@keyframes floatPhoto {
+  0% {
+    transform: translateY(0) scale(1) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-200px) scale(1.1) rotate(10deg);
+    opacity: 0;
+  }
+}
+/* floating-close */
