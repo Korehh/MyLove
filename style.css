@@ -436,3 +436,65 @@ body {
   }
 }
 /* floating-close */
+
+/* flowers */
+#bouquet-section {
+  text-align: center;
+  margin-top: 40px;
+}
+
+#show-bouquet-btn {
+  background-color: #e75480;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: bold;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+  transition: background-color 0.3s ease;
+}
+
+#show-bouquet-btn:hover {
+  background-color: #f77da1;
+}
+
+#bouquet-img {
+  margin-top: 20px;
+  max-width: 250px;
+  opacity: 0;
+  transform: scale(0.5);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  display: inline-block;
+}
+#bouquet-img.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+/* close */
+#flower-message-container {
+  text-align: center;
+  position: fixed; /* Fixed position to stay in place */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000; /* Ensure it appears on top of other content */
+  opacity: 1; /* Ensure it's visible initially */
+  visibility: visible; 
+  transition: opacity 1s ease, visibility 0s 1s; /* Visibility will delay until the fade-out completes */
+  
+}
+
+#flower-img {
+  width: 200px; /* Adjust size as needed */
+  margin-bottom: 20px;
+}
+
+#message {
+  font-size: 18px;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.6); /* Optional: background color for contrast */
+  padding: 10px;
+  border-radius: 8px;
+}

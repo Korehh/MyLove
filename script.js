@@ -146,3 +146,9 @@ const cakeMessage = document.getElementById("cake-message");
 function onCakeTap() {
   cakeMessage.textContent = "Blow the candles, love!";
 }
+const button = document.getElementById("show-btn");
+const image = document.getElementById("image");
+
+button.addEventListener("click", () => {
+    image.style.display = "block";  // This will show the image when the button is clicked
+});
