@@ -12,7 +12,7 @@
   <!-- Audio element -->
   <div class="spotify-player">
     <button id="play-btn">
-      <img src="img/spotify (1).png" alt="Play" id="play-icon" />
+      <img src="img/play.png" alt="Play" id="play-icon" />
       <span>Play Music</span>
     </button>
   </div>
@@ -69,7 +69,7 @@
 <script>
   const playBtn = document.getElementById('play-btn');
   const playIcon = document.getElementById('play-icon');
-  const audio = new Audio('fools.mp3');
+  const audio = new Audio('happybdaynayeon.mp3');
   let isPlaying = false;
 
   playBtn.addEventListener('click', () => {
@@ -81,7 +81,7 @@
     } else {
       audio.pause();
       isPlaying = false;
-      playIcon.src = 'img/spotify (1).png';
+      playIcon.src = 'img/play.png';
       playBtn.querySelector('span').textContent = 'Play';
     }
   });
